@@ -1,0 +1,104 @@
+---
+const categories = [
+  {
+    name: 'Signature Coffees',
+    icon: '☕',
+    items: [
+      { name: 'Cafe28 Signature Latte', desc: 'Our iconic house blend with vanilla & caramel', price: '8,000 IQD', popular: true },
+      { name: 'Classic Espresso', desc: 'Pure, bold, and perfectly extracted', price: '5,000 IQD', popular: false },
+      { name: 'Caramel Macchiato', desc: 'Layered espresso with steamed milk & caramel', price: '9,000 IQD', popular: true },
+      { name: 'Flat White', desc: 'Velvety microfoam over double ristretto', price: '8,000 IQD', popular: false },
+      { name: 'Mocha Delight', desc: 'Rich chocolate meets premium espresso', price: '9,500 IQD', popular: false },
+      { name: 'Affogato', desc: 'Espresso poured over artisan gelato', price: '10,000 IQD', popular: true },
+    ],
+  },
+  {
+    name: 'Cold Drinks',
+    icon: '🧊',
+    items: [
+      { name: 'Iced Caramel Latte', desc: 'Chilled perfection with caramel swirl', price: '9,000 IQD', popular: true },
+      { name: 'Cold Brew', desc: 'Slow-steeped for 18 hours, smooth & bold', price: '8,000 IQD', popular: false },
+      { name: 'Mango Smoothie', desc: 'Fresh mango blended with yogurt', price: '10,000 IQD', popular: false },
+      { name: 'Berry Blast', desc: 'Mixed berries with a hint of honey', price: '10,000 IQD', popular: true },
+      { name: 'Classic Lemonade', desc: 'Freshly squeezed with mint leaves', price: '6,000 IQD', popular: false },
+    ],
+  },
+  {
+    name: 'Gourmet Bites',
+    icon: '🥐',
+    items: [
+      { name: 'Cafe28 Croissant', desc: 'Buttery, flaky, baked fresh every morning', price: '6,000 IQD', popular: true },
+      { name: 'Avocado Toast', desc: 'Smashed avo on sourdough with poached egg', price: '12,000 IQD', popular: true },
+      { name: 'Waffle Stack', desc: 'Belgian waffles with maple & berries', price: '14,000 IQD', popular: false },
+      { name: 'Grilled Panini', desc: 'Turkey, cheese, and pesto on ciabatta', price: '13,000 IQD', popular: false },
+      { name: 'Cheesecake Slice', desc: 'New York style with berry compote', price: '10,000 IQD', popular: true },
+    ],
+  },
+];
+---
+
+<section id="menu" class="relative py-24 lg:py-32 overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cafe-100/40 rounded-full blur-3xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="font-accent text-cafe-500 text-xl">Delicious Offerings</span>
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-espresso-950 mt-2 mb-6">
+        Our
+        <span class="text-gradient">Menu</span>
+      </h2>
+      <p class="max-w-xl mx-auto text-espresso-600 text-lg">
+        Carefully curated drinks and bites to delight your senses. Every item is crafted with love.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-2">
+        <span class="w-12 h-[2px] bg-cafe-400 rounded-full"></span>
+        <span class="w-2 h-2 bg-cafe-500 rounded-full"></span>
+        <span class="w-12 h-[2px] bg-cafe-400 rounded-full"></span>
+      </div>
+    </div>
+
+    <!-- Menu Categories -->
+    <div class="space-y-16">
+      {categories.map((category, catIndex) => (
+        <div>
+          <!-- Category Header -->
+          <div class="flex items-center gap-4 mb-8">
+            <span class="text-3xl">{category.icon}</span>
+            <h3 class="font-display text-2xl sm:text-3xl font-bold text-espresso-900">{category.name}</h3>
+            <div class="flex-1 h-px bg-gradient-to-r from-cafe-200 to-transparent"></div>
+          </div>
+
+          <!-- Items Grid -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {category.items.map((item) => (
+              <div class="card-hover group relative flex justify-between items-start p-6 rounded-2xl bg-white border border-cafe-100/60 hover:border-cafe-300/80 hover:shadow-lg transition-all duration-300">
+                <div class="flex-1 pr-4">
+                  <div class="flex items-center gap-2 mb-1">
+                    <h4 class="font-semibold text-espresso-900 group-hover:text-cafe-700 transition-colors">{item.name}</h4>
+                    {item.popular && (
+                      <span class="px-2 py-0.5 bg-cafe-500/10 text-cafe-600 text-[10px] font-bold uppercase rounded-full tracking-wider">Popular</span>
+                    )}
+                  </div>
+                  <p class="text-espresso-400 text-sm">{item.desc}</p>
+                </div>
+                <span class="flex-shrink-0 font-display font-bold text-cafe-600 text-lg">{item.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Note -->
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-cafe-50 border border-cafe-200/50">
+        <span class="text-xl">💡</span>
+        <p class="text-espresso-600 text-sm">
+          <strong>Tip:</strong> Ask our baristas for today's special! We always have something new and exciting to try.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

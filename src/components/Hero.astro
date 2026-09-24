@@ -1,0 +1,137 @@
+---
+const photos = [
+  "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmRBqdAmwHKUnyLp5doBBIA9QcCLI30zJhJsqIIHxrNFqhzctJDQlQzmdiWJ0-2zhgWxeAlSrewGIHAtmp_GfrYvPl63zpirYJQZqdopHUV8nOMioBv2AfNkNeAUSc8R5HtKL5v=w408-h769-k-no",
+  "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmClIr55prprVaAR6lrKrdhbiZCEcSdLFqtCgrZl51jgbFIUADD_03zazSeNoFg6Ag1SJcCPGBl4epeDQJPYP-gdH9s71pP8G3u_WBmHnOB4kT_0BSsH94r6ekBw3-WEIWbJ3pn=w360-h480-k-no",
+];
+---
+
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background Image Slider -->
+  <div class="absolute inset-0">
+    <div id="hero-slides" class="relative w-full h-full">
+      {photos.map((photo, i) => (
+        <div
+          class={`hero-slide absolute inset-0 transition-opacity duration-[2000ms] ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+          data-index={i}
+        >
+          <img
+            src={photo}
+            alt="Twenty Eight Cafe28 ambiance"
+            class="w-full h-full object-cover scale-105"
+            loading="eager"
+          />
+        </div>
+      ))}
+    </div>
+    <div class="absolute inset-0 bg-hero-gradient"></div>
+    <!-- Decorative overlay pattern -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=%270 0 60 60%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27none%27 fill-rule=%27evenodd%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%271%27%3E%3Cpath d=%27M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%27/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
+    <div class="max-w-3xl">
+      <!-- Badge -->
+      <div class="reveal inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
+        <span class="text-yellow-400 text-sm">★</span>
+        <span class="text-white/90 text-sm font-medium">4.7 Rating on Google</span>
+        <span class="w-1 h-1 rounded-full bg-cafe-400"></span>
+        <span class="text-white/70 text-sm">Baghdad, Iraq</span>
+      </div>
+
+      <!-- Headline -->
+      <h1 class="reveal reveal-delay-1 font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-[0.95] mb-6">
+        Where Every
+        <br />
+        <span class="relative inline-block">
+          <span class="text-gradient">Cup</span>
+          <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
+            <path d="M2 8C40 2 80 2 100 6C120 10 160 10 198 4" stroke="#dd902c" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+          </svg>
+        </span>
+        Tells a Story
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="reveal reveal-delay-2 text-lg sm:text-xl text-white/75 max-w-xl mb-10 leading-relaxed font-light">
+        Escape the ordinary at Baghdad's most cherished café. Artisan coffee, handcrafted bites, and an atmosphere that feels like home — only better.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4">
+        <a
+          href="#menu"
+          class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-cafe-500 text-white font-semibold rounded-full hover:bg-cafe-600 transition-all duration-300 shadow-xl hover:shadow-cafe-500/40 hover:scale-105 active:scale-95 text-lg"
+        >
+          Explore Our Menu
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a
+          href="#contact"
+          class="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-full hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95 text-lg"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          Find Us
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="reveal reveal-delay-4 flex flex-wrap gap-8 mt-16 pt-8 border-t border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-cafe-500/20 flex items-center justify-center">
+            <span class="text-cafe-400">☕</span>
+          </div>
+          <div>
+            <span class="block text-white font-semibold text-sm">Premium Beans</span>
+            <span class="block text-white/50 text-xs">Single Origin</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-cafe-500/20 flex items-center justify-center">
+            <span class="text-cafe-400">🎵</span>
+          </div>
+          <div>
+            <span class="block text-white font-semibold text-sm">Live Vibes</span>
+            <span class="block text-white/50 text-xs">Music & Ambiance</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-cafe-500/20 flex items-center justify-center">
+            <span class="text-cafe-400">🌐</span>
+          </div>
+          <div>
+            <span class="block text-white font-semibold text-sm">Free WiFi</span>
+            <span class="block text-white/50 text-xs">Stay Connected</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
+    <span class="text-white/50 text-xs uppercase tracking-widest">Scroll</span>
+    <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+      <div class="w-1.5 h-1.5 bg-cafe-400 rounded-full animate-bounce"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  let current = 0;
+  if (slides.length > 1) {
+    setInterval(() => {
+      slides[current]?.classList.remove('opacity-100');
+      slides[current]?.classList.add('opacity-0');
+      current = (current + 1) % slides.length;
+      slides[current]?.classList.remove('opacity-0');
+      slides[current]?.classList.add('opacity-100');
+    }, 5000);
+  }
+</script>

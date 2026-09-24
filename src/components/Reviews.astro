@@ -1,0 +1,165 @@
+---
+const testimonials = [
+  {
+    name: 'Ahmed Al-Rawi',
+    rating: 5,
+    text: 'Absolutely the best coffee spot in Baghdad! The ambiance is perfect for catching up with friends, and their signature latte is out of this world. A must-visit!',
+    date: '2 weeks ago',
+    avatar: '🧑',
+  },
+  {
+    name: 'Sara Hassan',
+    rating: 5,
+    text: 'I come here almost every day. The baristas know my order by heart. The pastries are freshly baked and the croissants are the best I\'ve had in the city. Pure bliss!',
+    date: '1 month ago',
+    avatar: '👩',
+  },
+  {
+    name: 'Omar Khalil',
+    rating: 4,
+    text: 'Great atmosphere and solid coffee. The WiFi is fast, making it my go-to spot for remote work. Staff is friendly and the prices are very reasonable for the quality.',
+    date: '3 weeks ago',
+    avatar: '🧔',
+  },
+  {
+    name: 'Noor Jaber',
+    rating: 5,
+    text: 'Celebrated my birthday here and it was magical! The team went above and beyond. The waffle stack is phenomenal and the cold brew is my new addiction. Highly recommend!',
+    date: '2 months ago',
+    avatar: '👩‍🦱',
+  },
+  {
+    name: 'Ali Fadhel',
+    rating: 5,
+    text: 'The attention to detail here is incredible. From the perfectly pulled espresso to the beautiful presentation — everything screams quality. My favorite café in all of Baghdad.',
+    date: '1 week ago',
+    avatar: '👨',
+  },
+  {
+    name: 'Maryam Saeed',
+    rating: 4,
+    text: 'Such a cozy and Instagram-worthy spot! The mango smoothie is refreshing and the avocado toast is a game changer. Can\'t wait to come back and try everything on the menu.',
+    date: '1 month ago',
+    avatar: '👧',
+  },
+];
+
+const ratingBreakdown = [
+  { stars: 5, percentage: 72 },
+  { stars: 4, percentage: 20 },
+  { stars: 3, percentage: 5 },
+  { stars: 2, percentage: 2 },
+  { stars: 1, percentage: 1 },
+];
+---
+
+<section id="reviews" class="relative py-24 lg:py-32 bg-warm-gradient overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute top-20 left-10 w-40 h-40 bg-cafe-300/20 rounded-full blur-2xl"></div>
+  <div class="absolute bottom-20 right-10 w-56 h-56 bg-cafe-200/20 rounded-full blur-2xl"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="font-accent text-cafe-500 text-xl">What People Say</span>
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-espresso-950 mt-2 mb-6">
+        Loved by
+        <span class="text-gradient">Everyone</span>
+      </h2>
+      <p class="max-w-xl mx-auto text-espresso-600 text-lg">
+        Don't just take our word for it — hear from the amazing people who make our café their second home.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-2">
+        <span class="w-12 h-[2px] bg-cafe-400 rounded-full"></span>
+        <span class="w-2 h-2 bg-cafe-500 rounded-full"></span>
+        <span class="w-12 h-[2px] bg-cafe-400 rounded-full"></span>
+      </div>
+    </div>
+
+    <!-- Rating Overview -->
+    <div class="max-w-md mx-auto mb-16 p-8 rounded-3xl bg-white shadow-lg border border-cafe-100/50">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="text-center">
+          <span class="block text-5xl font-display font-bold text-espresso-950">4.7</span>
+          <div class="flex gap-1 mt-1 justify-center">
+            {[1,2,3,4,5].map((s) => (
+              <span class={`text-lg ${s <= 4 ? 'text-yellow-400' : 'text-yellow-200'}`}>★</span>
+            ))}
+          </div>
+          <span class="text-xs text-espresso-400 mt-1 block">Google Reviews</span>
+        </div>
+        <div class="flex-1 space-y-2">
+          {ratingBreakdown.map((r) => (
+            <div class="flex items-center gap-2 text-xs">
+              <span class="w-3 text-espresso-400 text-right">{r.stars}</span>
+              <div class="flex-1 h-2 bg-cafe-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-cafe-400 to-cafe-500 rounded-full" style={`width: ${r.percentage}%`}></div>
+              </div>
+              <span class="w-8 text-espresso-400">{r.percentage}%</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <a
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full text-center px-6 py-3 bg-cafe-50 hover:bg-cafe-100 text-cafe-700 font-semibold rounded-xl transition-colors text-sm"
+      >
+        See All Reviews on Google →
+      </a>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {testimonials.map((review, i) => (
+        <div class={`card-hover p-8 rounded-3xl bg-white border border-cafe-100/60 shadow-sm reveal reveal-delay-${(i % 3) + 1}`}>
+          <!-- Rating -->
+          <div class="flex gap-1 mb-4">
+            {[1,2,3,4,5].map((s) => (
+              <span class={`text-sm ${s <= review.rating ? 'text-yellow-400' : 'text-gray-200'}`}>★</span>
+            ))}
+          </div>
+
+          <!-- Quote -->
+          <blockquote class="text-espresso-700 text-sm leading-relaxed mb-6 italic">
+            "{review.text}"
+          </blockquote>
+
+          <!-- Author -->
+          <div class="flex items-center gap-3 pt-4 border-t border-cafe-100/50">
+            <div class="w-10 h-10 rounded-full bg-cafe-100 flex items-center justify-center text-lg">
+              {review.avatar}
+            </div>
+            <div>
+              <span class="block text-sm font-semibold text-espresso-900">{review.name}</span>
+              <span class="block text-xs text-espresso-400">{review.date}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Trust Signals -->
+    <div class="mt-16 flex flex-wrap justify-center gap-8 items-center">
+      <div class="flex items-center gap-2 text-espresso-400 text-sm">
+        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        Verified Google Reviews
+      </div>
+      <div class="flex items-center gap-2 text-espresso-400 text-sm">
+        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        Authentic Customer Feedback
+      </div>
+      <div class="flex items-center gap-2 text-espresso-400 text-sm">
+        <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        Rated 4.7 / 5.0
+      </div>
+    </div>
+  </div>
+</section>

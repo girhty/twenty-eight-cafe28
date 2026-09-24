@@ -1,0 +1,106 @@
+---
+const photos = [
+  {
+    src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmRBqdAmwHKUnyLp5doBBIA9QcCLI30zJhJsqIIHxrNFqhzctJDQlQzmdiWJ0-2zhgWxeAlSrewGIHAtmp_GfrYvPl63zpirYJQZqdopHUV8nOMioBv2AfNkNeAUSc8R5HtKL5v=w408-h769-k-no",
+    alt: "Twenty Eight Cafe28 signature coffee art",
+    caption: "Signature Latte Art",
+    span: "row-span-2",
+  },
+  {
+    src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmClIr55prprVaAR6lrKrdhbiZCEcSdLFqtCgrZl51jgbFIUADD_03zazSeNoFg6Ag1SJcCPGBl4epeDQJPYP-gdH9s71pP8G3u_WBmHnOB4kT_0BSsH94r6ekBw3-WEIWbJ3pn=w360-h480-k-no",
+    alt: "Twenty Eight Cafe28 cozy interior",
+    caption: "Our Cozy Space",
+    span: "",
+  },
+  {
+    src: "https://lh3.googleusercontent.com/grass-cs/ACvplmMq_jscGZx_CZ3L_jqOcH5xziHUVukozCuxtnkc8BBj4PmgyYWE7SU6d66B3IHU-aRAhi-7nbQgW-XabZew9UWT7-uJY6HdsCNBUYIVx3rQBrPZKQqEltmgxrLrKIgOOx2whg5GRw=w300-h450-p-k-no",
+    alt: "Twenty Eight Cafe28 gourmet pastry",
+    caption: "Fresh Pastries",
+    span: "",
+  },
+  {
+    src: "https://lh3.googleusercontent.com/grass-cs/ACvplmM861ofnH48akBVpyyEBPXmNiehWxfCA2u4b29eR0Q3xUP1IyEmKiaoM1Va_coTCPV8DKWKvv0GVNVqC5PqVRCo2mrPlr4XGzybYLGf0k01TcSm0JV8xYDsPTYYUneU2Ntk1U_e=w300-h450-p-k-no",
+    alt: "Twenty Eight Cafe28 specialty drinks",
+    caption: "Specialty Drinks",
+    span: "",
+  },
+  {
+    src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmRBqdAmwHKUnyLp5doBBIA9QcCLI30zJhJsqIIHxrNFqhzctJDQlQzmdiWJ0-2zhgWxeAlSrewGIHAtmp_GfrYvPl63zpirYJQZqdopHUV8nOMioBv2AfNkNeAUSc8R5HtKL5v=w408-h769-k-no",
+    alt: "Twenty Eight Cafe28 evening ambiance",
+    caption: "Evening Vibes",
+    span: "",
+  },
+  {
+    src: "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmClIr55prprVaAR6lrKrdhbiZCEcSdLFqtCgrZl51jgbFIUADD_03zazSeNoFg6Ag1SJcCPGBl4epeDQJPYP-gdH9s71pP8G3u_WBmHnOB4kT_0BSsH94r6ekBw3-WEIWbJ3pn=w360-h480-k-no",
+    alt: "Twenty Eight Cafe28 barista at work",
+    caption: "Master Baristas",
+    span: "row-span-2",
+  },
+];
+---
+
+<section id="gallery" class="relative py-24 lg:py-32 bg-espresso-950 overflow-hidden">
+  <!-- Background texture -->
+  <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,%3Csvg width=80 height=80 viewBox=%270 0 80 80%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%271%27%3E%3Cpath d=%27M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-8 8h-2zm4 0l4-4v2l-4 4h-2z%27/%3E%3C/g%3E%3C/svg%3E');"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="font-accent text-cafe-400 text-xl">Visual Journey</span>
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-2 mb-6">
+        A Taste Through
+        <span class="text-gradient">Our Lens</span>
+      </h2>
+      <p class="max-w-xl mx-auto text-espresso-300 text-lg">
+        Step inside and see what makes Twenty Eight Cafe28 a beloved destination in Baghdad.
+      </p>
+      <div class="mt-6 flex items-center justify-center gap-2">
+        <span class="w-12 h-[2px] bg-cafe-500/50 rounded-full"></span>
+        <span class="w-2 h-2 bg-cafe-500 rounded-full"></span>
+        <span class="w-12 h-[2px] bg-cafe-500/50 rounded-full"></span>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 auto-rows-[200px] lg:auto-rows-[250px]">
+      {photos.map((photo, i) => (
+        <div class={`group relative rounded-2xl overflow-hidden cursor-pointer card-hover ${photo.span}`}>
+          <img
+            src={photo.src}
+            alt={photo.alt}
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-espresso-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+          <!-- Caption -->
+          <div class="absolute bottom-0 left-0 right-0 p-4 lg:p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+            <span class="text-cafe-400 font-accent text-sm">📸 @cafe28</span>
+            <p class="text-white font-display font-semibold text-lg mt-1">{photo.caption}</p>
+          </div>
+          <!-- Corner accent -->
+          <div class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 text-cafe-400 hover:text-cafe-300 transition-colors font-medium group"
+      >
+        <span>See more on Google Maps</span>
+        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

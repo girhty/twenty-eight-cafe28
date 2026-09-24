@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Gallery from '../components/Gallery.astro';
+import Menu from '../components/Menu.astro';
+import Reviews from '../components/Reviews.astro';
+import CTA from '../components/CTA.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    <Gallery />
+    <Menu />
+    <Reviews />
+    <CTA />
+    <Contact />
+  </main>
+  <Footer />
+
+  <!-- Scroll Reveal Animation Script -->
+  <script>
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          entry.target.style.animationPlayState = 'running';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach((el) => {
+      (el as HTMLElement).style.animationPlayState = 'paused';
+      observer.observe(el);
+    });
+  </script>
+</Layout>
